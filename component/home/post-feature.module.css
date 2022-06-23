@@ -1,0 +1,17 @@
+.latest {
+  width: 90%;
+  max-width: 80rem;
+  margin: 8px auto;
+}
+
+.latest h2 {
+  font-size: var(--text-size-header);
+  color: var(--color-system-dark);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .latest h2 {
+    font-size: var(--text-size-container-header);
+  }
+}
