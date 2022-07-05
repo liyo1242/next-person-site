@@ -2,7 +2,7 @@ import type { GetStaticPropsContext } from 'next'
 import type { PropsWithChildren } from 'react'
 import type { Post } from '../../type/post'
 
-import PostContent from '../../component/post/post-detail/post-content'
+import PostContent from '../../feature/posts/postDetail/post-content'
 import { getPostData, getPostFiles } from '../../lib/posts-util'
 
 function PostDetailPage(props: PropsWithChildren<{ post: Post }>) {
