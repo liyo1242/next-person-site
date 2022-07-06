@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: var(--color-system-dark-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  margin: 0 12px;
+}
+
+.header a {
+  color: var(--color-system-light);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.header a:hover,
+.header a:active,
+.header a.active {
+  color: var(--color-system-light);
+  text-decoration: underline var(--color-system-light);
+}
+
+.header li.linkActive a {
+  color: var(--color-system-light);
+  text-decoration: underline var(--color-system-light);
+}
+
+@media (min-width: 768px) {
+  .header ul {
+    gap: 0.5rem;
+  }
+
+  .header a {
+    font-size: 16px;
+  }
+}

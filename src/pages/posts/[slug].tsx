@@ -1,11 +1,9 @@
 import type { GetStaticPropsContext } from 'next'
-import type { PropsWithChildren } from 'react'
-import type { Post } from '../../type/post'
 
 import PostContent from '../../feature/posts/postDetail/post-content'
-import { getPostData, getPostFiles } from '../../lib/posts-util'
+import { getPostDataDetail, getPostFiles } from '../../lib/posts-util'
 
-function PostDetailPage(props: PropsWithChildren<{ post: Post }>) {
+function PostDetailPage(props: { post: ReturnType<typeof getPostDataDetail> }) {
   return <PostContent post={props.post} />
 }
 
@@ -13,7 +11,7 @@ export function getStaticProps(context: GetStaticPropsContext<{ slug: string }>)
   const { params } = context
   const { slug = '' } = params || {}
 
-  const post = getPostData(slug)
+  const post = getPostDataDetail(slug)
 
   return {
     props: {

@@ -19,6 +19,7 @@
 }
 
 .card a {
+  width: 100%;
   color: var(--color-primary);
   text-decoration: none;
 }

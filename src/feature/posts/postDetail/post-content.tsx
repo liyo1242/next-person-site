@@ -1,5 +1,4 @@
-import type { Post } from '../../../type/post'
-import type { PropsWithChildren } from 'react'
+import type { Post } from '../../../lib/posts-util'
 
 import Image from 'next/image'
 import PostHeader from './post-header'
@@ -10,7 +9,7 @@ import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import classes from './post-content.module.css'
 
-function PostContent(props: PropsWithChildren<{ post: Post }>) {
+function PostContent(props: { post: Post }) {
   const { post } = props
 
   const customRenderers = {

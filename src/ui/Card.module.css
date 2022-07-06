@@ -1,11 +1,28 @@
 .cardGrid {
+  flex: 1;
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 1.5rem;
   align-content: center;
+  height: 100%;
+}
+
+@media screen and (max-height: 780px) {
+  .cardGrid {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, minmax(20rem, 1fr));
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cardGrid::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .card {
@@ -16,6 +33,7 @@
   text-align: center;
   border-radius: 20px;
   padding: 12px 8px;
+  max-height: 400px;
 }
 
 .card a {
@@ -26,8 +44,11 @@
 }
 
 .card a > .image {
+  position: relative;
   flex: 2;
   width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card a > .content {

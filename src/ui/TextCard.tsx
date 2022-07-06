@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import Link from 'next/link'
-import classes from 'TextCard.module.css'
+import classes from './TextCard.module.css'
 
 interface TextCardProps {
   title: string

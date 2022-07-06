@@ -4,10 +4,12 @@
   height: 600px;
   padding: 50px 120px;
   box-shadow: inset 0px 0px 200px 0px rgba(192, 204, 185);
+  height: 100vh;
+  max-height: 1024px;
 }
 
 .summary, .bg:before {
-  background: url('../../public/images/site/section.jpg') 0 / cover;
+  background: url('../../../public/images/site/section.jpg') 0 / cover;
 }
 
 .bg {

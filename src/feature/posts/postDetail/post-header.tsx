@@ -1,10 +1,14 @@
 import Image from 'next/image'
-import { PropsWithChildren } from 'react'
-import { Post } from '../../../type/post'
 
 import classes from './post-header.module.css'
 
-function PostHeader(props: PropsWithChildren<Pick<Post, 'title' | 'image' | 'slug'>>) {
+interface PostHeaderProps {
+  title: string
+  image: string
+  slug: string
+}
+
+function PostHeader(props: PostHeaderProps) {
   const { title, image, slug } = props
 
   const imagePath = image ? `/images/posts/${slug}/${image}` : '/images/site/image-default'

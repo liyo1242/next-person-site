@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto&family=Source+Sans+Pro:wght@300&display=swap');
+
+body {
+  --color-primary: #347295;
+  --color-system-light: #f9dfab;
+  --color-system-light-2: #284352;
+  --color-system-dark: #0f1b24;
+  --color-system-dark-2: #141515;
+
+  --color-system-light-2-opacity: rgba(38, 49, 64);
+
+  --text-size-body: 18px;
+  --text-size-header: 40px;
+  --text-size-container-header: 24px;
+  --text-size-describe: 12px;
+
+  background-color: hsl(265, 3%, 95%);
+  color: #252525;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
