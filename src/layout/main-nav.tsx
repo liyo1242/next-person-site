@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import classes from './main-nav.module.css'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 
 const navLinks = [
   {
@@ -14,22 +12,14 @@ const navLinks = [
   },
 ]
 
-function MainNav() {
-  const router = useRouter()
-
-  const [activePath, setActivePath] = useState('')
-
-  useEffect(() => {
-    setActivePath('/' + (router.pathname.split('/')[1] || ''))
-  }, [router.pathname])
-
+function MainNav(props: { activePath: string }) {
   return (
     <header className={classes.header}>
       <nav>
         <ul>
           {navLinks.map((navLink) => (
             <li
-              className={activePath === navLink.path ? classes.linkActive : ''}
+              className={props.activePath === navLink.path ? classes.linkActive : ''}
               key={navLink.path}
             >
               <Link href={navLink.path}>{navLink.text}</Link>
