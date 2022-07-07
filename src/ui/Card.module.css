@@ -34,6 +34,7 @@
   border-radius: 20px;
   padding: 12px 8px;
   max-height: 400px;
+  max-width: 20rem;
 }
 
 .card a {
@@ -41,18 +42,19 @@
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
 .card a > .image {
   position: relative;
-  flex: 2;
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
+  flex: 0 0 150px;
 }
 
 .card a > .content {
-  flex: 3;
   display: flex;
   flex-direction: column;
 }
@@ -62,5 +64,9 @@
 }
 
 .card a > .content > p {
+  display: -webkit-box;
   font-size: 18px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }

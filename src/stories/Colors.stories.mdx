@@ -1,0 +1,25 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+<Meta title="Colors" />
+
+# Color
+
+---
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.primary"
+    subtitle="Primary Color"
+    colors={{ Primary: 'var(--color-primary)' }}
+  />
+  <ColorItem
+    title="theme.color.light"
+    subtitle="Light Color"
+    colors={{ Light1: 'var(--color-system-light)', Light2: 'var(--color-system-light-2)' }}
+  />
+  <ColorItem
+    title="theme.color.dark"
+    subtitle="Dark Color"
+    colors={{ Dark1: 'var(--color-system-dark)', Dark2: 'var(--color-system-dark-2)' }}
+  />
+</ColorPalette>
