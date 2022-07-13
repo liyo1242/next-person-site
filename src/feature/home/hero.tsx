@@ -1,21 +1,10 @@
-import Image from 'next/image'
-import classes from './hero.module.css'
-import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
+import Image from "next/image";
+import classes from "./hero.module.css";
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 function Hero() {
-  const { t } = useTranslation('hero')
-  const [moveOffset, setMoveOffset] = useState(0)
-
-  useEffect(() => {
-    const handleParallaxAnimate = () => {
-      window.scrollY < 400 && setMoveOffset(window.scrollY)
-    }
-
-    window.addEventListener('scroll', handleParallaxAnimate)
-
-    return () => window.removeEventListener('scroll', handleParallaxAnimate)
-  }, [])
+  const { t } = useTranslation("home");
 
   return (
     <section className={classes.hero}>
@@ -27,12 +16,26 @@ function Hero() {
           objectFit="cover"
         />
       </div>
-      <article
-        style={{ transform: `translateY(calc(-50% + ${moveOffset}px))` }}
-        className={classes.article}
-      >
-        <h1>{t('header')}</h1>
-        <p>{t('describe')}</p>
+      <article className={classes.article}>
+        <h1>{t("heroHeader")}</h1>
+        <p>{t("heroDescribe")}</p>
+        <div className={classes.iconGroup}>
+          <Link href="mailto:liyo1242@gmail.com" passHref={true}>
+            <a target="_blank">
+              <em className="icon-envelop"></em>
+            </a>
+          </Link>
+          <Link href="https://twitter.com/liyo1242" passHref={true}>
+            <a target="_blank">
+              <em className="icon-twitter"></em>
+            </a>
+          </Link>
+          <Link href="https://www.linkedin.com/in/liyo1242" passHref={true}>
+            <a target="_blank">
+              <em className="icon-linkedin"></em>
+            </a>
+          </Link>
+        </div>
       </article>
       <div className={classes.portrait}>
         <Image
@@ -42,16 +45,8 @@ function Hero() {
           objectFit="cover"
         />
       </div>
-      <div className={classes.mask}>
-        <Image
-          src="/images/site/hero/mask.png"
-          alt="Section Mask Image"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

@@ -3,8 +3,6 @@
   background-image: linear-gradient(var(--color-system-light-2), var(--color-system-light), var(--color-system-light-2));
   padding: 20px 60px;
   background-size: cover;
-  height: 100vh;
-  max-height: 1024px;
 }
 
 .repo h2 {

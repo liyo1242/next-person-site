@@ -1,16 +1,15 @@
 .article {
   text-align: center;
-  background-image: linear-gradient(var(--color-system-dark-2), var(--color-system-dark), var(--color-system-dark-2));
+  background: var(--color-system-dark-2);
   padding: 20px 60px;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  max-height: 1024px;
 }
 
 .article h2 {
   font-size: var(--text-size-header);
   color: var(--color-system-light);
   text-align: center;
+  z-index: 99;
 }

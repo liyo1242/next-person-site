@@ -1,33 +1,34 @@
-import type { NextPage } from 'next'
-import type { Post } from '../type/post'
-import { Fragment } from 'react'
-import Hero from '../feature/home/hero'
-import FeaturedPost from '../feature/home/featuredPost'
-import Repo from '../feature/home/repo'
-import Summary from '../feature/home/summary'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+/* eslint-disable react/prop-types */
+import type { NextPage } from "next";
+import { Fragment } from "react";
+import HomeContainer from "../feature/home";
+import Hero from "../feature/home/hero";
+import FeaturedPost from "../feature/home/featuredPost";
+import Repo from "../feature/home/repo";
+import Summary from "../feature/home/summary";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import { getPosts } from '../lib/posts-util'
+import { getPosts } from "../lib/posts-util";
 
-const Home: NextPage<{ posts: Array<Post> }> = (props) => {
-  return (
-    <Fragment>
+const Home: NextPage<{ posts: ReturnType<typeof getPosts> }> = (props) => (
+  <Fragment>
+    <HomeContainer>
       <Hero />
       <FeaturedPost posts={props.posts} />
       <Summary />
       <Repo />
-    </Fragment>
-  )
-}
+    </HomeContainer>
+  </Fragment>
+);
 
 export async function getStaticProps({ locale }) {
-  const posts = getPosts(6, 0)
+  const posts = getPosts(6, 0);
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['hero'])),
+      ...(await serverSideTranslations(locale, ["hero"])),
       posts,
     },
-  }
+  };
 }
 
-export default Home
+export default Home;

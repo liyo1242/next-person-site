@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-rows: minmax(100vh, 900px) minmax(min-content, 1000px) repeat(2, min-content);
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    grid-template-rows: minmax(100vh, 900px) repeat(3, min-content);
+    }
+}
+
+.container > section {
+  max-width: 100vw;
+}

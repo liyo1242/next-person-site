@@ -7,63 +7,93 @@
   grid-template-rows: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 1.5rem;
-  align-content: center;
   height: 100%;
-}
-
-@media screen and (max-height: 780px) {
-  .cardGrid {
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(6, minmax(20rem, 1fr));
-    overflow-x: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .cardGrid::-webkit-scrollbar {
-    display: none;
-  }
+  justify-items: center;
 }
 
 .card {
+  width: 100%;
   position: relative;
   display: flex;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: var(--color-system-light);
+  border-radius: 50px;
   text-align: center;
-  border-radius: 20px;
-  padding: 12px 8px;
-  max-height: 400px;
+  height: 400px;
   max-width: 20rem;
+  padding: 20px;
+}
+
+.card .surface,
+.card .back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #121313, #151616);
+  box-shadow:  10px 10px 30px #111212,
+              -10px -10px 30px #171818;
+}
+
+.card .surface {
+  transition: .5s;
+  transform: perspective(1000px) rotateY(00deg);
+}
+
+.card:hover .surface {
+  transform: perspective(1000px) rotateY(180deg) translateY(-5px);
+}
+
+.card .back {
+  background-color: transparent;
+  transition: .5s;
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: perspective(1000px) rotateY(360deg) translateY(-5px);
 }
 
 .card a {
-  color: var(--color-primary);
+  color: var(--color-system-light);
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   position: relative;
 }
 
-.card a > .image {
-  position: relative;
+.card a .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  flex: 0 0 150px;
+  opacity: .3;
 }
 
-.card a > .content {
+.card a .content {
   display: flex;
   flex-direction: column;
+  padding: 12px 8px;
 }
 
-.card a > .content > time {
-  font-size: 16px;
+.card a .content > h3 {
+  font-size: 32px;
+  margin-bottom: 0;
 }
 
-.card a > .content > p {
+.card a .content > time {
+  font-size: 12px;
+}
+
+.card a .back > p {
   display: -webkit-box;
   font-size: 18px;
   overflow: hidden;

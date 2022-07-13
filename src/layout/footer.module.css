@@ -19,6 +19,8 @@
   font-size: 28px;
 }
 
-.iconGroup > em {
+.iconGroup > a {
+  text-decoration: none;
+  color: var(--color-system-light);
   padding: 12px 18px;
 }
