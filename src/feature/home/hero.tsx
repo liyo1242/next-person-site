@@ -1,10 +1,10 @@
-import Image from "next/image";
-import classes from "./hero.module.css";
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
+import Image from 'next/image'
+import classes from './hero.module.css'
+import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
 
 function Hero() {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home')
 
   return (
     <section className={classes.hero}>
@@ -17,8 +17,8 @@ function Hero() {
         />
       </div>
       <article className={classes.article}>
-        <h1>{t("heroHeader")}</h1>
-        <p>{t("heroDescribe")}</p>
+        <h1>{t('heroHeader')}</h1>
+        <p>{t('heroDescribe')}</p>
         <div className={classes.iconGroup}>
           <Link href="mailto:liyo1242@gmail.com" passHref={true}>
             <a target="_blank">
@@ -46,7 +46,7 @@ function Hero() {
         />
       </div>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

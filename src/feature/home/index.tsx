@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from "react";
-import classes from "./index.module.css";
+import type { PropsWithChildren } from 'react'
+import classes from './index.module.css'
 
 function Home(props: PropsWithChildren) {
-  return <div className={classes.container}>{props.children}</div>;
+  return <div className={classes.container}>{props.children}</div>
 }
 
-export default Home;
+export default Home

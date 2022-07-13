@@ -1,9 +1,9 @@
-import classes from "./summary.module.css";
-import Image from "next/image";
-import { useTranslation } from "next-i18next";
+import classes from './summary.module.css'
+import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 function Summary() {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home')
 
   return (
     <section className={classes.summary}>
@@ -17,22 +17,20 @@ function Summary() {
           />
         </div>
         <div className={classes.content}>
-          <h3>{t("summaryHeader")}</h3>
+          <h3>{t('summaryHeader')}</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            iusto vitae reiciendis, beatae necessitatibus iste dolorum dolores
-            quasi! Aperiam quidem, magnam at qui quia modi aliquam esse impedit?
-            Cumque, cupiditate. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Doloribus iusto vitae reiciendis, beatae
-            necessitatibus iste dolorum dolores quasi! Aperiam quidem, magnam at
-            qui quia modi aliquam esse impedit? Cumque, cupiditate. Lorem, ipsum
-            dolor sit amet consectetur adipisicing elit. Doloribus iusto vitae
-            reiciendis,
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto vitae
+            reiciendis, beatae necessitatibus iste dolorum dolores quasi! Aperiam quidem, magnam at
+            qui quia modi aliquam esse impedit? Cumque, cupiditate. Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Doloribus iusto vitae reiciendis, beatae necessitatibus
+            iste dolorum dolores quasi! Aperiam quidem, magnam at qui quia modi aliquam esse
+            impedit? Cumque, cupiditate. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Doloribus iusto vitae reiciendis,
           </p>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Summary;
+export default Summary
