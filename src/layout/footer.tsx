@@ -1,5 +1,5 @@
-import classes from "./footer.module.css";
-import Link from "next/link";
+import classes from './footer.module.css'
+import Link from 'next/link'
 
 function Footer() {
   return (
@@ -23,7 +23,7 @@ function Footer() {
         </Link>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

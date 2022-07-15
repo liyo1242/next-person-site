@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Card } from '../ui/Card'
+import { Card, CardGrid } from '../ui/Card'
 
 export default {
   title: 'Example/Card',
@@ -8,9 +8,21 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    img: {
+      control: false,
+    },
+    link: {
+      control: false,
+    },
+  },
 } as ComponentMeta<typeof Card>
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
+const Template: ComponentStory<typeof Card> = (args) => (
+  <CardGrid>
+    <Card {...args} />
+  </CardGrid>
+)
 
 export const Primary = Template.bind({})
 

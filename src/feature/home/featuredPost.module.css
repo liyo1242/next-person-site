@@ -1,15 +1,21 @@
 .article {
   text-align: center;
-  background: var(--color-system-dark-2);
+  background: linear-gradient(var(--color-system-dark-2) 120px, var(--color-system-light-2));
   padding: 20px 60px;
   background-size: cover;
   display: flex;
   flex-direction: column;
 }
 
+@media screen and (max-width: 600px) {
+  .article {
+    padding: 5% 0;
+  }
+}
+
 .article h2 {
   font-size: var(--text-size-header);
-  color: var(--color-system-light);
+  color: var(--color-system-light-2);
   text-align: center;
   z-index: 99;
 }

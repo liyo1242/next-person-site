@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import { Fragment } from 'react'
 import HomeContainer from '../feature/home'
 import Hero from '../feature/home/hero'
@@ -21,11 +21,11 @@ const Home: NextPage<{ posts: ReturnType<typeof getPosts> }> = (props) => (
   </Fragment>
 )
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const posts = getPosts(6, 0)
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['hero'])),
+      ...(await serverSideTranslations(locale!, ['home'])),
       posts,
     },
   }

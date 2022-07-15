@@ -1,13 +1,14 @@
 .repo {
   text-align: center;
-  background-image: linear-gradient(var(--color-system-light-2), var(--color-system-light), var(--color-system-light-2));
+  background: linear-gradient(var(--color-system-light), var(--color-system-dark-2));
   padding: 20px 60px;
+  min-height: 600px;
   background-size: cover;
 }
 
 .repo h2 {
   font-size: var(--text-size-header);
-  color: var(--color-system-dark);
+  color: var(--color-system-dark-2);
   text-align: center;
 }
 

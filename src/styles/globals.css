@@ -2,12 +2,11 @@
 
 body {
   --color-primary: #347295;
-  --color-system-light: #f9dfab;
-  --color-system-light-2: #284352;
+  --color-system-light: #BED0CD;
+  --color-system-light-2: #BED6DE;
   --color-system-dark: #0f1b24;
   --color-system-dark-2: #141515;
-
-  --color-system-light-2-opacity: rgba(38, 49, 64);
+  --color-system-dark-2-opacity: rgba(20, 21, 21, .5);
 
   --text-size-body: 18px;
   --text-size-header: 40px;

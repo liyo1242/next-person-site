@@ -1,17 +1,23 @@
 .summary {
   position: relative;
   width: 100%;
-  padding: 50px 120px;
+  padding: 10%;
   box-shadow: inset 0px 0px 200px 0px rgba(192, 204, 185);
+  display: flex;
+  align-items: center;
 }
 
-.summary, .bg:before {
+.summary {
+  background: linear-gradient(to top, var(--color-system-light-2), transparent, transparent)
+  ,url('../../../public/images/site/section.jpg') 0 / cover;
+}
+
+.bg:before {
   background: url('../../../public/images/site/section.jpg') 0 / cover;
 }
 
 .bg {
   position: relative;
-  height: 100%;
   background: hsla(0, 0%, 100%, .4);
   overflow: hidden;
   border-radius: 10px;
@@ -24,10 +30,16 @@
 .bg > .image {
   position: relative;
   flex: 4;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
-  height: 100%;
+  height: calc(70vh - 40px);
   max-width: 500px;
+}
+
+@media screen and (min-width: 1200px) {
+  .summary {
+    min-height: 100vh;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -40,8 +52,25 @@
     float: left;
     border-radius: 50%;
     height: 300px;
-    width: 300px;
+    width: 100%;
+    max-height: 300px;
+    max-width: 300px;
     margin: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bg > .image {
+    float: none;
+    margin: 0 calc(50% - 150px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bg > .image {
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
   }
 }
 
@@ -50,7 +79,7 @@
 .bg > .content {
   position: relative;
   flex: 6;
-  color: var(--color-light-2);
+  color: var(--color-system-light-2);
   font-size: 24px;
   line-height: 2;
   z-index: 99;
@@ -70,4 +99,14 @@
   left: 0;
   filter: blur(15px);
   margin: -30px;
+}
+
+@media screen and (max-width: 600px) {
+  .summary {
+    padding: 5%;
+  }
+
+  .bg > .content {
+    font-size: 16px;
+  }
 }

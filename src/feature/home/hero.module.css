@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
   content: '';
-  background: linear-gradient(to top, #111, rgba(0,0,0,.5) 40vh);
+  background: linear-gradient(to top, var(--color-system-dark-2), var(--color-system-dark-2-opacity) 40vh);
 }
 
 .portrait {
@@ -83,10 +83,6 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
-}
-
-.iconGroup > a:active {
-
 }
 
 .iconGroup > a:nth-last-child(1) {
