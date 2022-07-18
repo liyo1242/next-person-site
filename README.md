@@ -1,34 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
+<div align="center">
+  <div align="center" style="width: 50px">
 
-## Getting Started
+![docs-logo.png](.asset/docs-logo.png)
 
-First, run the development server:
+  </div>
+  <h3 align="center">Personal Site</h3>
+
+  <p align="center">
+    I hope to use this project to record my work experience
+    <br />
+    <br />
+  </p>
+</div>
+
+<details open="open">
+<summary> 🗻 Table of Contents</summary>
+
+- [About This Project](#about-this-project)
+  - [Prerequisites](#prerequisites)
+- [Useful Links](#useful-links)
+- [Usage](#usage)
+- [Project structure](#project-structure)
+
+</details>
+
+## About This Project
+
+This project consists of 2 main parts, show resume on _Home page_ and show your own articles at _Post page_
+
+I want to have a base so I could start iterating on the features
+
+### Prerequisites
+
+This project start from **Next.js** and **React**, and has some base lint rule (eslint and commitlint), so the development may need to pay attention to
+
+## Useful Links
+
+Next.js Config Setting Docs
+https://nextjs.org/docs/api-reference/next.config.js/introduction
+
+Cypress Test Command Docs
+https://docs.cypress.io/api/commands/and#Chai
+
+## Usage
+
+After you have cloned, there are a few things you must do
+
+- Install the dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Start this project
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- If you just want to see the UI, you can find him through **storybook**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn run storybook
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+My folder structure is separated by feature, as the project is still small, so I want to avoid over-design.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+Project
+├─ .asset                                   #  docs asset
+├─ .husky                                   #  husky config folder (lint check before commit)
+├─ .vscode                                  #  vscode config folder (extension convenience)
+├─ .storybook                               #  storybook config folder (UI dashboard)
+├─ posts                                    #  articles in md format (*.md)
+├─ public
+│  ├─ images
+│  └─ locales                               #  i18n
+├─ src
+│  ├─ feature                               #  core Logic Components
+│  ├─ layout                                #  UI that is not part of the main program
+│  ├─ lib                                   #  node.js code part
+│  ├─ pages                                 #  simplest logic and component arrangement
+│  ├─ stories                               #  storybook component stories
+│  └─ ui                                    #  common components
+└─ ...
+```
